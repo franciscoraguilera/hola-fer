@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#e2473b">
+  <title>Para Fer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Oregano&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <div class="radio sin-estrenar" id="radio" role="region" aria-label="Música">
+    <div class="radio__in">
+
+      <svg class="radio__casete" viewBox="0 0 48 32" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="45" height="29" rx="4.5" fill="#fff1d0" stroke="#1e1a2e" stroke-width="2.5"/>
+        <rect x="6" y="5.2" width="36" height="5" rx="1.2" fill="#f8bd3a" stroke="#1e1a2e" stroke-width="1.4"/>
+        <rect x="8.5" y="12.6" width="31" height="11.4" rx="5.7" fill="#1e1a2e"/>
+        <g class="radio__carrete">
+          <circle cx="16" cy="18.3" r="4.1" fill="#fff1d0"/>
+          <path d="M16 14.6v7.4M12.8 16.45l6.4 3.7M12.8 20.15l6.4-3.7" fill="none" stroke="#1e1a2e" stroke-width="1.3"/>
+        </g>
+        <g class="radio__carrete">
+          <circle cx="32" cy="18.3" r="4.1" fill="#fff1d0"/>
+          <path d="M32 14.6v7.4M28.8 16.45l6.4 3.7M28.8 20.15l6.4-3.7" fill="none" stroke="#1e1a2e" stroke-width="1.3"/>
+        </g>
+        <path d="M13.5 30.2l2.2-3.6h16.6l2.2 3.6" fill="none" stroke="#1e1a2e" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+
+      <div class="radio__pantalla">
+        <div class="radio__cinta">
+          <div class="radio__rollo" id="radio-rollo"><span>Dale play · tres canciones para vos</span><span aria-hidden="true">Dale play · tres canciones para vos</span></div>
+        </div>
+        <div class="radio__linea">
+          <input type="range" id="radio-pos" min="0" max="1000" step="1" value="0" aria-label="Avance de la canción">
+          <span class="radio__tiempo" id="radio-tiempo">0:00</span>
+        </div>
+      </div>
+
+      <div class="radio__botones">
+        <button type="button" class="radio__btn" id="radio-ant" aria-label="Canción anterior">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="3.5" width="3.4" height="13" rx="1"/><path d="M17.5 4.3v11.4a1 1 0 0 1-1.55.83L7.3 10.83a1 1 0 0 1 0-1.66l8.65-5.7a1 1 0 0 1 1.55.83z"/></svg>
+        </button>
+        <button type="button" class="radio__btn radio__btn--play" id="radio-play" aria-label="Reproducir">
+          <svg class="ico-play" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 3.6v12.8a1 1 0 0 0 1.53.85l10.2-6.4a1 1 0 0 0 0-1.7L6.53 2.75A1 1 0 0 0 5 3.6z"/></svg>
+          <svg class="ico-pausa" viewBox="0 0 20 20" aria-hidden="true"><rect x="3.8" y="3" width="4.6" height="14" rx="1.2"/><rect x="11.6" y="3" width="4.6" height="14" rx="1.2"/></svg>
+        </button>
+        <button type="button" class="radio__btn" id="radio-sig" aria-label="Canción siguiente">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="14.1" y="3.5" width="3.4" height="13" rx="1"/><path d="M2.5 4.3v11.4a1 1 0 0 0 1.55.83l8.65-5.7a1 1 0 0 0 0-1.66L4.05 3.47A1 1 0 0 0 2.5 4.3z"/></svg>
+        </button>
+      </div>
+
+      <label class="radio__vol">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7.2h3l4.3-3.5a.6.6 0 0 1 1 .46v11.68a.6.6 0 0 1-1 .46L6 12.8H3a1 1 0 0 1-1-1V8.2a1 1 0 0 1 1-1z"/><path d="M13.6 6.4a5 5 0 0 1 0 7.2l1.1 1.1a6.6 6.6 0 0 0 0-9.4z"/></svg>
+        <input type="range" id="radio-vol" min="0" max="100" step="1" value="85" aria-label="Volumen">
+      </label>
+
+    </div>
+    <audio id="radio-audio" preload="metadata"></audio>
+  </div>
+
+  <header class="inicio">
+    <p class="inicio__para">Hola, Fer.</p>
+    <h1>Hay cosas que no supe decirte a&nbsp;tiempo.</h1>
+    <p class="inicio__sub">Así que las fui poniendo aquí, una por una. Bajá despacio.</p>
+    <span class="flecha inicio__flecha" aria-hidden="true"><img src="assets/web/flecha.png" width="420" height="271" alt=""></span>
+  </header>
+
+  <section class="primera" data-scroll>
+    <div class="primera__pin">
+      <figure class="primera__foto">
+        <img src="assets/web/IMG_2348.jpg" width="1125" height="1500"
+             alt="Fer abrazándome en el asiento de atrás de un auto, de noche">
+        <figcaption class="sello">13 05 '26&nbsp;&nbsp;00:22</figcaption>
+      </figure>
+      <div class="primera__lineas">
+        <p class="fecha linea" data-at="0.04">13 de mayo, pasada la medianoche</p>
+        <p class="linea" data-at="0.14">Esta es nuestra primera foto.</p>
+        <p class="linea" data-at="0.29">Me estabas abrazando, y la tomé así, sin soltarme de vos.</p>
+        <p class="linea" data-at="0.45">Estabas usando el For Her de Narciso Rodríguez, mi perfume favorito tuyo.</p>
+        <p class="linea" data-at="0.61">En teoría aún éramos amigos.</p>
+        <p class="linea linea--fuerte" data-at="0.77">Pero yo moría de ganas de abrazarte todo el tiempo.</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="historia">
+
+    <section class="capitulo">
+      <div class="fotos fotos--par">
+        <figure class="foto" style="--r:-2deg">
+          <img loading="lazy" src="assets/web/IMG_4529.jpg" width="1125" height="1500"
+               alt="Tu mano sobre la mía en la mesa de un restaurante">
+          <figcaption class="sello">19 07 '26&nbsp;&nbsp;23:42</figcaption>
+        </figure>
+        <figure class="foto" style="--r:3deg">
+          <img loading="lazy" src="assets/web/IMG_4534.jpg" width="1125" height="1500"
+               alt="Tu mano con las uñas rojas apoyada en mi brazo">
+        </figure>
+      </div>
+      <div class="texto">
+        <p class="fecha">19 de julio, casi medianoche</p>
+        <p>Dos meses después, tu mano ya descansaba sobre la mía con mucha ternura.</p>
+        <p>Llegamos a la medianoche de mi cumpleaños, vos habías vuelto de Acahay.</p>
+        <p>Me acuerdo de tus uñas rojas, tu vestido negro y tus tacones de hilo que se atan. Y de no querer que esa cena se acabara.</p>
+      </div>
+    </section>
+
+    <section class="capitulo capitulo--inv">
+      <div class="fotos fotos--par">
+        <figure class="foto" style="--r:1.5deg">
+          <img loading="lazy" src="assets/web/IMG_4544.jpg" width="1125" height="1500"
+               alt="Nuestras piernas juntas, sentados después de la cena">
+          <figcaption class="sello">20 07 '26&nbsp;&nbsp;00:26</figcaption>
+        </figure>
+        <figure class="foto foto--video" style="--r:-3deg">
+          <video muted loop playsinline preload="none"
+                 poster="assets/web/IMG_4550-poster.jpg" width="720" height="1280"
+                 aria-label="Video corto de nuestras manos jugando">
+            <source src="assets/web/IMG_4550.mp4" type="video/mp4">
+          </video>
+        </figure>
+      </div>
+      <div class="texto">
+        <p class="fecha">Esa misma noche, un rato después</p>
+        <p>Ya era 20 de julio, el día de mi cumpleaños, y seguíamos sin soltarnos.</p>
+        <p>Nadie tenía apuro por irse.</p>
+      </div>
+    </section>
+
+    <section class="dicho">
+      <p>Me mostraste que había maneras diferentes de amar.</p>
+    </section>
+
+    <section class="capitulo">
+      <div class="fotos">
+        <figure class="foto" style="--r:-1.2deg">
+          <img loading="lazy" src="assets/web/IMG_5219.jpg" width="1125" height="1500"
+               alt="Nuestras manos entrelazadas en el auto">
+          <figcaption class="sello">09 08 '26&nbsp;&nbsp;18:32</figcaption>
+        </figure>
+      </div>
+      <div class="texto">
+        <p class="fecha">9 de agosto, atardeciendo</p>
+        <p>Te habías accidentado en Ypacaraí y recuerdo que corrí a buscarte aunque no te hayas lastimado, sólo para tener una excusa para verte.</p>
+        <p>Era capaz de recorrer la distancia que sea con tal de estar un segundo contigo.</p>
+      </div>
+    </section>
+
+    <section class="dicho">
+      <p>Me enseñaste géneros musicales nuevos, como el bolero glam.</p>
+      <p class="dicho__nota">Daniel, Me Estás Matando: es la canción que suena acá arriba.
+        <button type="button" class="enlace" data-cancion="0">Ponela ahora</button></p>
+    </section>
+
+    <section class="capitulo capitulo--inv">
+      <div class="fotos">
+        <figure class="foto" style="--r:2deg">
+          <img loading="lazy" src="assets/web/IMG_5408.jpg" width="1125" height="1500"
+               alt="Tu bota apoyada contra mi zapato">
+          <figcaption class="sello">17 08 '26&nbsp;&nbsp;19:17</figcaption>
+        </figure>
+      </div>
+      <div class="texto">
+        <p class="fecha">17 de agosto</p>
+        <p>Cuando hicimos match de zapatos.</p>
+        <p>Sin hacer nada más. El hecho de estar a tu lado siempre resulta ser mi plan favorito.</p>
+      </div>
+    </section>
+
+    <section class="dicho">
+      <p>Me enseñaste guaraní.</p>
+      <p class="dicho__nota">Soy pésimo hablando, pero vos me seguís corrigiendo y enseñando con paciencia.</p>
+    </section>
+
+    <section class="capitulo">
+      <div class="fotos">
+        <figure class="foto" style="--r:-2.2deg">
+          <img loading="lazy" src="assets/web/IMG_8278.jpg" width="1125" height="1500"
+               alt="Vos, concentrada, con mi mano entre las tuyas">
+          <figcaption class="sello">10 10 '26&nbsp;&nbsp;10:23</figcaption>
+        </figure>
+      </div>
+      <div class="texto">
+        <p class="fecha">10 de octubre, por la mañana en Lido Bar</p>
+        <p>Recuerdo que fuimos a buscar tu ropa para tu viaje, recorrimos varias tiendas para tener todas las cosas que necesitabas.</p>
+        <p>Recuerdo que llevaba tu sostén en una mano y una chica me dijo: «¿No será mejor que te guarde eso?»</p>
+      </div>
+    </section>
+
+    <section class="dicho">
+      <p>Sanaste mis heridas, una por una.</p>
+    </section>
+
+    <section class="capitulo capitulo--inv">
+      <div class="fotos">
+        <figure class="foto" style="--r:-1.6deg">
+          <img loading="lazy" src="assets/web/IMG_9400.jpg" width="1125" height="1500"
+               alt="Los dos muy cerca, abrazados">
+          <figcaption class="sello">01 11 '26&nbsp;&nbsp;10:13</figcaption>
+        </figure>
+      </div>
+      <div class="texto">
+        <p class="fecha">1 de noviembre</p>
+        <p>Así de cerca.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <section class="extrano">
+    <h2>Te extraño, Fer.</h2>
+    <p>Extraño tu mano buscando la mía.</p>
+    <p>Extraño que me abraces.</p>
+    <p>Extraño que duermas en mi pecho.</p>
+    <p>Extraño todo de vos.</p>
+    <p>Extraño tu risa.</p>
+    <p>Extraño tu sonrisa.</p>
+    <p>Extraño tus ojitos mirándome.</p>
+    <p class="extrano__fuerte">Extraño el amor más puro que conocí en mi vida.</p>
+  </section>
+
+  <section class="cielo" data-scroll>
+    <div class="cielo__pin">
+      <div class="cielo__estrellas" aria-hidden="true"></div>
+      <div class="cielo__estrellas cielo__estrellas--titilan" aria-hidden="true"></div>
+      <img class="cielo__homero" src="assets/meme/homero.jpg" width="735" height="413"
+           alt="Homero Simpson sentado sobre su auto, mirando el cielo estrellado">
+      <div class="cielo__fer">
+        <img src="assets/web/fer-cielo.jpg" width="1000" height="1067" alt="Fer, apareciendo en el cielo">
+      </div>
+      <p class="cielo__txt" data-from="0.02" data-to="0.30">Estos días ando así.</p>
+      <p class="cielo__txt" data-from="0.34" data-to="0.60">Mirando el cielo…</p>
+      <p class="cielo__txt" data-from="0.66" data-to="1.01">…y en todas partes aparecés vos.</p>
+    </div>
+  </section>
+
+  <section class="baul">
+    <div class="baul__marcos" aria-hidden="true">
+      <figure class="foto foto--vacia" style="--r:-5deg">
+        <div class="foto__hueco"></div>
+        <figcaption class="foto__pie">nuestra primera selfie</figcaption>
+      </figure>
+      <figure class="foto foto--vacia" style="--r:2.5deg">
+        <div class="foto__hueco"></div>
+        <figcaption class="foto__pie">nuestro primer viaje</figcaption>
+      </figure>
+      <figure class="foto foto--vacia" style="--r:6deg">
+        <div class="foto__hueco"></div>
+        <figcaption class="foto__pie">todas las que faltan</figcaption>
+      </figure>
+    </div>
+    <div class="baul__texto">
+      <p>Acá aún no tenemos selfies, no tenemos fotos de nuestros viajes. Estas son fotos que nos tomamos sin avisar.</p>
+      <p>Quiero construir un mundo de recuerdos contigo, un mundo consciente, avisando y sin avisar.</p>
+      <p class="baul__fuerte">Quiero tener un baúl de recuerdos bellos contigo.</p>
+    </div>
+  </section>
+
+  <section class="perdon">
+    <h2>Perdóname.</h2>
+    <p>Sé que estás dolida. Sé que todas estas circunstancias te pusieron muy triste.</p>
+    <p>No voy a buscar excusas ni explicarlo a detalle ahora mismo, hay cosas que necesitás saber para entenderme y para que yo pueda entenderte.</p>
+    <p>Entiendo que estés dolida, y entiendo si necesitas tiempo.</p>
+    <p>No te pido que lo olvides ahora. Te pido la oportunidad de demostrarte, con hechos y no sólo con una página como esta, que puedo cuidarte mejor que nadie o nada en el mundo, porque vos sos lo más lindo que me pasó en la vida.</p>
+    <p class="perdon__puente">Por eso tengo una sola pregunta.</p>
+  </section>
+
+  <section class="pregunta">
+    <div class="caja" id="caja">
+
+      <div class="caja__pregunta">
+        <figure class="caja__gato">
+          <img loading="lazy" src="assets/meme/gatito.jpg" width="474" height="364"
+               alt="Un gatito con los ojos llenos de lágrimas mirando un teléfono">
+        </figure>
+        <p class="caja__nota" id="nota" aria-live="polite">Él también está esperando tu respuesta.</p>
+        <h2>¿Me perdonas?</h2>
+        <div class="botones" id="botones">
+          <button type="button" class="boton boton--si" id="si">Sí</button>
+          <button type="button" class="boton boton--no" id="no">No</button>
+        </div>
+      </div>
+
+      <div class="caja__final" hidden>
+        <figure class="foto" style="--r:-2deg">
+          <img loading="lazy" src="assets/web/IMG_4529.jpg" width="1125" height="1500"
+               alt="Tu mano sobre la mía">
+        </figure>
+        <h2>Gracias, mi amor.</h2>
+        <p>Te amo, Fer. Con todo.</p>
+        <p>Voy a cuidar esto, y a cuidarte a vos.</p>
+        <p class="caja__momento" id="momento"></p>
+      </div>
+
+    </div>
+    <span class="flecha pregunta__sigue" id="sigue" aria-hidden="true" hidden><img src="assets/web/flecha.png" width="420" height="271" alt=""></span>
+  </section>
+
+  <section class="cita" id="cita" hidden>
+    <h2>Hablemos en persona.</h2>
+    <p>Tengo cosas importantes que decirte, y no puedo decírtelas por chat.</p>
+    <p>Elegí vos el día, la hora y el lugar.</p>
+
+    <form class="cita__form" id="cita-form" novalidate>
+      <div class="cita__campos">
+        <label class="campo">
+          <span>¿Qué día?</span>
+          <input type="date" id="cita-fecha" name="fecha" required>
+        </label>
+        <label class="campo">
+          <span>¿A qué hora?</span>
+          <input type="time" id="cita-hora" name="hora" step="900" required>
+        </label>
+      </div>
+      <fieldset class="lugares" id="cita-lugares">
+        <legend>¿Dónde?</legend>
+        <div class="lugares__lista">
+          <label class="lugar"><input type="radio" name="lugar" value="Pederzani"><span>Pederzani</span></label>
+          <label class="lugar"><input type="radio" name="lugar" value="Madero"><span>Madero</span></label>
+          <label class="lugar"><input type="radio" name="lugar" value="Ñu Guasu"><span>Ñu Guasu</span></label>
+          <label class="lugar"><input type="radio" name="lugar" value="La Quesería"><span>La Quesería</span></label>
+          <label class="lugar"><input type="radio" name="lugar" value="fran"><span>Que resuelva Fran</span></label>
+        </div>
+      </fieldset>
+      <p class="cita__resumen" id="cita-resumen" aria-live="polite"></p>
+      <button type="submit" class="pulsador" id="cita-enviar">Enviar</button>
+      <p class="cita__aviso" id="cita-aviso" role="status"></p>
+    </form>
+
+    <div class="cita__listo" id="cita-listo" hidden>
+      <h3>Listo, anotado.</h3>
+      <p class="cita__resumen" id="cita-confirmado"></p>
+      <p>Gracias por darme ese rato.</p>
+      <button type="button" class="enlace" id="cita-cambiar">Cambiar el día o la hora</button>
+    </div>
+  </section>
+
+  <script src="assets/musica.js"></script>
+  <script src="assets/main.js"></script>
+  <script src="assets/cita.js"></script>
+</body>
+</html>
