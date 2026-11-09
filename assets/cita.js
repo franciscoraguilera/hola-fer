@@ -136,7 +136,7 @@
       hora: h,
       lugar: lugar,
       eligeFran: lugar === ELIGE_FRAN,
-      frase: base + (!lugar ? '' : lugar === ELIGE_FRAN ? '. El lugar lo elige Fran' : ', en ' + lugar),
+      frase: base + (!lugar ? '' : lugar === ELIGE_FRAN ? '. El lugar lo elige TU marido.' : ', en ' + lugar),
       fraseCorreo: base + (!lugar ? '' : lugar === ELIGE_FRAN ? ' (el lugar lo elegís vos)' : ', en ' + lugar),
       yaPaso: cuando.getTime() < Date.now()
     };
